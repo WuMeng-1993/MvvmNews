@@ -1,12 +1,15 @@
 package com.wm.mvvmnews.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 
+import com.wm.mvvmnews.bean.BaseRequestData;
+import com.wm.mvvmnews.bean.login.UserBean;
 import com.wm.mvvmnews.databinding.ActivityLoginBinding;
 
 /**
@@ -26,6 +29,7 @@ public class LoginActivity extends AppCompatActivity {
         loginBinding = ActivityLoginBinding.inflate(LayoutInflater.from(this));
         setContentView(loginBinding.getRoot());
         initClick();
+        observe();
     }
 
     /**
@@ -36,6 +40,19 @@ public class LoginActivity extends AppCompatActivity {
         loginBinding.btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                loginViewModel.login(loginBinding.etAccount.getText().toString(),
+                        loginBinding.etPass.getText().toString());
+            }
+        });
+    }
+
+    /**
+     * 观察
+     */
+    private void observe() {
+        loginViewModel.loginLiveData.observe(this, new Observer<BaseRequestData<UserBean>>() {
+            @Override
+            public void onChanged(BaseRequestData<UserBean> userBeanBaseRequestData) {
 
             }
         });
