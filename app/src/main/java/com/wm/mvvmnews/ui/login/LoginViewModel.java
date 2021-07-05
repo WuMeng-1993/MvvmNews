@@ -1,4 +1,4 @@
-package com.wm.mvvmnews.ui;
+package com.wm.mvvmnews.ui.login;
 
 import androidx.arch.core.util.Function;
 import androidx.lifecycle.LiveData;

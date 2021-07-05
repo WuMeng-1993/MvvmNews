@@ -1,4 +1,4 @@
-package com.wm.mvvmnews.ui;
+package com.wm.mvvmnews.ui.login;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.Observer;
@@ -10,7 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Toast;
 
-import com.wm.mvvmnews.MainActivity;
+import com.wm.mvvmnews.ui.MainActivity;
 import com.wm.mvvmnews.bean.BaseRequestData;
 import com.wm.mvvmnews.bean.login.UserBean;
 import com.wm.mvvmnews.config.HttpConfig;
@@ -22,8 +22,14 @@ import com.wm.mvvmnews.databinding.ActivityLoginBinding;
  */
 public class LoginActivity extends AppCompatActivity {
 
+    /**
+     * ViewBinding
+     */
     private ActivityLoginBinding loginBinding;
 
+    /**
+     * ViewModel
+     */
     private LoginViewModel loginViewModel;
 
     @Override
