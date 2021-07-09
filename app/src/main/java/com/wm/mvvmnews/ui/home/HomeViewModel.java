@@ -7,6 +7,7 @@ import androidx.lifecycle.Transformations;
 import androidx.lifecycle.ViewModel;
 
 import com.wm.mvvmnews.bean.home.NewsBean;
+import com.wm.mvvmnews.repository.home.HomeRepository;
 
 /**
  * @author WuMeng
@@ -30,7 +31,7 @@ public class HomeViewModel extends ViewModel {
     public LiveData<NewsBean> newsLiveData = Transformations.switchMap(newsType, new Function<String, LiveData<NewsBean>>() {
         @Override
         public LiveData<NewsBean> apply(String input) {
-            return null;
+            return new HomeRepository().getNews(input,appKey);
         }
     });
 

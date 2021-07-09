@@ -59,7 +59,9 @@ public class HomeFragment extends Fragment {
         mHomeViewModel.newsLiveData.observe(getViewLifecycleOwner(), new Observer<NewsBean>() {
             @Override
             public void onChanged(NewsBean newsBean) {
+                if (newsBean != null && newsBean.getErrorCode() == 0) {
 
+                }
             }
         });
     }
