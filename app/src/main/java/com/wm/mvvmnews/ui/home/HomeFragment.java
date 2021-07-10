@@ -27,7 +27,7 @@ public class HomeFragment extends Fragment {
 
     private HomeViewModel mHomeViewModel;
 
-    private String appKey = "04ea095cbea56775e2d1669713f34cc2";
+    private final String appKey = "04ea095cbea56775e2d1669713f34cc2";
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {

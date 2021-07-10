@@ -20,6 +20,6 @@ public class HttpConfig {
     /**
      * 聚合数据API
      */
-    public static final String BASE_URL = "http://v.juhe.cn/";
+    public static final String BASE_URL = "https://v.juhe.cn/";
 
 }
