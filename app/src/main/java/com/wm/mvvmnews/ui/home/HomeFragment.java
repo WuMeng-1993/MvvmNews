@@ -14,6 +14,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.wm.mvvmnews.R;
+import com.wm.mvvmnews.adapter.NewsAdapter;
 import com.wm.mvvmnews.bean.home.NewsBean;
 
 /**
@@ -24,6 +25,8 @@ import com.wm.mvvmnews.bean.home.NewsBean;
 public class HomeFragment extends Fragment {
 
     private RecyclerView mRecyclerView;
+
+    private NewsAdapter mNewsAdapter;
 
     private HomeViewModel mHomeViewModel;
 
@@ -49,6 +52,8 @@ public class HomeFragment extends Fragment {
         mRecyclerView = view.findViewById(R.id.recycler);
         LinearLayoutManager manager = new LinearLayoutManager(getContext(),LinearLayoutManager.VERTICAL,false);
         mRecyclerView.setLayoutManager(manager);
+        mNewsAdapter = new NewsAdapter();
+        mRecyclerView.setAdapter(mNewsAdapter);
     }
 
     /**
@@ -60,7 +65,7 @@ public class HomeFragment extends Fragment {
             @Override
             public void onChanged(NewsBean newsBean) {
                 if (newsBean != null && newsBean.getErrorCode() == 0) {
-
+                    mNewsAdapter.setDataBeanList(newsBean.getResult().getData());
                 }
             }
         });
