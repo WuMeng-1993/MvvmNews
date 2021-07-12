@@ -1,7 +1,6 @@
 package com.wm.mvvmnews.adapter;
 
 import android.view.LayoutInflater;
-import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
@@ -10,6 +9,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.wm.mvvmnews.R;
 import com.wm.mvvmnews.bean.home.NewsBean;
+import com.wm.mvvmnews.click.ClickBinding;
 import com.wm.mvvmnews.databinding.LayoutItemNewsBinding;
 
 import java.util.List;
@@ -41,6 +41,7 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.ViewHolderItem
     public void onBindViewHolder(@NonNull @org.jetbrains.annotations.NotNull NewsAdapter.ViewHolderItem holder, int position) {
         LayoutItemNewsBinding itemNewsBinding = holder.itemNewsBinding;
         itemNewsBinding.setNews(dataBeanList.get(position));
+        itemNewsBinding.setItemClick(new ClickBinding());
         itemNewsBinding.executePendingBindings();
     }
 

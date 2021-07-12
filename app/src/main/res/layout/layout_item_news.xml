@@ -9,12 +9,17 @@
             name="news"
             type="com.wm.mvvmnews.bean.home.NewsBean.ResultBean.DataBean" />
 
+        <variable
+            name="itemClick"
+            type="com.wm.mvvmnews.click.ClickBinding" />
+
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/ll_item"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:onClick="@{(view) -> itemClick.itemClick(news,view)}">
 
         <TextView
             android:id="@+id/tv_title"
